@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@200&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");  
+       *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:"Montserrat",;
+       }
+       header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 8%;
+        background-color: #D9D9D9;
+        /* #9b93cd */
+       }
+     
+       .logo{
+        width: 10%;
+        height: 50px;
+       }
+       nav a{
+        text-decoration: none;
+        display: inline-block;
+        padding: 0px 20px;
+        transition:all 0.3s ease 0s;
+        color: black;
+       }
+       nav a:hover{
+        color: aquamarine;
+       }
+       button{
+        padding: 10px 48px;
+        background-color: #372B81;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition:all 0.3s ease 0s;
+        margin-right: 2px;
+       }
+       button:hover{
+        color: aquamarine;
+       }
+       .btn{
+        padding: 10px 48px;
+        background-color: #2C6ED1;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition:all 0.3s ease 0s;
+       }
+       .box{
+            margin-top: 2%;
+            padding-bottom: 2%;
+        }
+
+
+    </style>
+
+    <header>
+        <img class="logo" src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="logo">
+    <nav>      
+        <a href="{% url 'sportsapp:home' %}"> Home</a>
+        <a href="{% url 'sportsapp:team' %}"> Team</a>
+        <a href="{%url 'sportsapp:fixture_list' %}">Fixtures</a>
+        <a href="{% url 'sportsapp:news_feed'%}">News</a>
+        <a class="cont" href="">Contact</a>
+    </nav>
+    <ul class="navbar">
+        <!-- {% if user.is_authenticated %} -->
+            <!-- <span class="navbar-text"> Hello,{{user.username}}.</span> -->
+            <a  href="{"> Log out</a>
+        <!-- {% else %} -->
+            <a href=" "><button>Register</button></a>
+            <a  href=" "><button class="btn">Log in</button></a>
+      
+        <!-- {% endif %} -->
+    </ul>
+    
+    </header>
+
+    <!-- <span class="navbar-text"> Hello,{{user.username}}.</span> -->
+    <div class="container">
+        <div class="box">
+            {% block page_header %}{% endblock page_header %}
+        </div>
+        <div>
+        {% block content %}{% endblock content %}
+        </div>
+    </div>
+</body>
+</html>

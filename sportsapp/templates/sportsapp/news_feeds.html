@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'sportsapp/base.html'%}
+    {% block content %}
+  
+    <!-- <table>
+        <tr>
+        <th>Name</th>
+        <th>Feed</th>
+        <th>Position</th>
+        <th>Image</th>
+    </tr> -->
+    <h1>News Feeds</h1>
+    {% for feed in feeds %}
+    <!-- <tr>
+        <td>{{feed.repoter_name}} </td>
+        <td>{{feed.message}} </td>
+        <td>{{feed.title}} </td>
+        <td>{{feed.news_image}} </td>
+    </tr> -->
+    <p>{{feed.repoter_name}},{{feed.title}}</p>
+    <p>{{feed.news_image}} </p>
+    <p>{{feed.message}}</p>
+    <p>{{feed.date_time}} </p>
+
+    {% endfor %} 
+    {% endblock content %}  
+</body>
+</html>

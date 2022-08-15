@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .block{
+            background-image: url("https://media.istockphoto.com/photos/huge-multi-sports-collage-taekwondo-tennis-soccer-basketball-etc-picture-id1364827675?b=1&k=20&m=1364827675&s=170667a&w=0&h=2ac1QP_pzf8aEAP4UkPtS2NarFgOnHoCbM4hXLf3G8w=");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 300px;
+            width: 90%;
+            margin: auto;
+            padding-top: 2%;
+        }
+        .bord {
+            width: 90%;
+            height: 240px;
+            margin: auto;
+            background-color: black;
+            opacity: 0.8;
+            text-align: center;
+        }
+        h1{
+            font-size: 80px;
+            text-align: center;
+            color: white;
+            padding-top: 5%;
+        }
+        p{
+            text-align: center;
+            font-size: 30px;
+        
+        }
+        .words{
+            margin-top: 2%;
+
+        }
+    </style>
+    {% extends "sportsapp/base.html" %}
+    {% block content %}
+    <div class="block">
+        <div class="bord">
+           <h1>Read it.Watch it.Enjoy it</h1>
+        </div>
+    </div>
+    <div class="words"> 
+        <p>The strength of a team is in each individual member.</p>
+        <P>The strength of each member is the team.</P>
+    </div>
+   
+
+    {% endblock %}
+    
+</body>
+</html>
