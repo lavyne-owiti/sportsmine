@@ -100,11 +100,9 @@ class New_report(models.Model):
 
 class Fixture(models.Model):
     fixtures=models.FileField(upload_to='uploads/')
+    # fiximage=models.ImageField(upload_to='images/')
     date=models.DateField(auto_now_add=True)
     uploaded_by=models.ForeignKey(Leader,on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.uploaded_by
 
 class Referee(models.Model):
     reffirst_name=models.CharField(max_length=15)

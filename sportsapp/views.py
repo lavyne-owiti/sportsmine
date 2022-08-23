@@ -6,6 +6,8 @@ from sportsapp.models import Award, Coach, Fixture, Leader, Match, New_report, P
 def home(request):
     """the home page for sports"""
     return render(request,'sportsapp/home.html')
+def contact(request):
+    return render(request,'sportsapp/contact.html')
 
 def list_player(request):
     players=Player.objects.all()

@@ -7,16 +7,56 @@
     <title>Document</title>
 </head>
 <body>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+        /* .whole{
+            display: flex;
+        
+        } */
+        .image{
+            display: inline-block;
+            margin-left: 4%;
+            margin-top: 4%;
+
+        }
+    
+        .brt{
+            padding: 10px 95.5px;
+            background-color: #2C6ED1;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            cursor: pointer;
+            margin-top: -2%;  
+            border: none; 
+        }
+        .brt a{
+            color: white;
+            text-decoration: none;
+        }
+        .pics{
+            width: 250px;
+            height: 30vh;
+        }
+    </style>
     {% extends 'sportsapp/base.html'%}
     {% block content %}
    
-    
     <h1>FIXTURE OF THE SEASON</h1>
+
     {% for fixture in fixtures %}
-    <p>{{fixture.fixtures}}</p>
-    <p>{{fixture.uploaded_by}}</p>
+    
+    <div class="image">
+        <img class="pics" src="https://images.unsplash.com/photo-1568323993144-20d546ba585d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt=""/>
+        <div>
+        <button class="brt"><a href="{{fixture.fixtures.urls}}">Download</a></button>
+        </div> 
+   </div>
   
     {% endfor %} 
+    
     {% endblock content %}  
 </body>
 </html>

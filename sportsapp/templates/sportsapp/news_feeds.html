@@ -7,9 +7,62 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .bag{
+            border: 1px solid black;
+            width: 40%;
+            height: 30vh;
+        }
+        .messages{
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            width: 100%;
+            height: 15vh;
+            background-color:#2F2764;
+            margin-top: 25%;
+             
+        }
+        p{
+            color: black;
+        }
+
+
+    </style>
     {% extends 'sportsapp/base.html'%}
     {% block content %}
-  
+
+    <h1>News Feeds</h1>
+    <p>BASKETBALL</p>
+
+    {% for feed in feeds %}
+    
+    <div class="bag">
+        <img src="{{feed.news_image.url}}"/>
+        <div class="messages">
+            <h3>{{feed.title}}</h3>
+            <p>{{feed.message}}</p>
+            <small>{{feed.date_time}} </small>
+            <P>{{feed.repoter_name}}</P>
+
+        </div>
+    </div>
+    {% endfor %} 
+    {% endblock content %}  
+</body>
+</html>
+
+
+ <!-- <tr>
+        <td>{{feed.repoter_name}} </td>
+        <td>{{feed.message}} </td>
+        <td>{{feed.title}} </td>
+        <td>{{feed.news_image}} </td>
+    </tr> -->
+
+      
     <!-- <table>
         <tr>
         <th>Name</th>
@@ -17,20 +70,3 @@
         <th>Position</th>
         <th>Image</th>
     </tr> -->
-    <h1>News Feeds</h1>
-    {% for feed in feeds %}
-    <!-- <tr>
-        <td>{{feed.repoter_name}} </td>
-        <td>{{feed.message}} </td>
-        <td>{{feed.title}} </td>
-        <td>{{feed.news_image}} </td>
-    </tr> -->
-    <p>{{feed.repoter_name}},{{feed.title}}</p>
-    <p>{{feed.news_image}} </p>
-    <p>{{feed.message}}</p>
-    <p>{{feed.date_time}} </p>
-
-    {% endfor %} 
-    {% endblock content %}  
-</body>
-</html>

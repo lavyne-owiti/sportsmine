@@ -14,5 +14,6 @@ urlpatterns = [
     path('award_list/',views.award_list,name='award_list'),
     path('match_ofthe_day/',views.match_ofthe_day,name='match_ofthe_day'),
     path('team/',views.team,name='team'),
+    path('contact/',views.contact,name="contact"),
     
 ]
